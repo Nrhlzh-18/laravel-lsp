@@ -29,7 +29,6 @@ export default function Layout({ children }) {
                     ) : (
                         <>
                             <a href="/nilai/index">NILAI</a>
-                        </>
                     )}
                     <a href="/logout">LOGOUT</a>
                 </b>
