@@ -18,6 +18,7 @@
                     <th>ACTION</th>
                 </tr>
                 @foreach ($kelas as $k)
+                <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $k->nama_kelas }}</td>
                     <td>{{ $k->jurusan->nama_jurusan }}</td>
@@ -25,6 +26,7 @@
                         <a href="/kelas/edit/{{ $k->id }}" class="button-warning">EDIT</a>
                         <a href="/kelas/destroy" class="button-danger" onclick="return confirm('Yakin Hapus?')">HAPUS</a>
                     </td>
+                </tr>
                 @endforeach
             </table>
         </b>

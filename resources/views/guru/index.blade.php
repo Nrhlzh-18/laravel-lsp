@@ -25,7 +25,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $guru->nip }}</td>
                     <td>{{ $guru->nama_guru }}</td>
-                    <td>{{ $guru->jk }}</td>
+                    <td>{{ $guru->jk == 'L' ? 'Laki-Laki' : 'Perempuan' }}</td>
                     <td>{{ $guru->alamat }}</td>
                     <td>{{ $guru->password }}</td>
                     <td>

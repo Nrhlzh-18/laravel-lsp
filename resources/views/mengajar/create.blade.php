@@ -1,32 +1,35 @@
 @extends('main.layout')
 @section('content')
     <center>
-        <h2>TAMBAH DATA SISWA</h2>
-        <form action="/siswa/store" method="post">
+        <h2>TAMBAH DATA MENGAJAR</h2>
+        <form action="/mengajar/store" method="post">
             @csrf
             <table width="50%">
                 <tr>
-                    <td width="25%">NIS</td>
-                    <td width="25%"><input type="text" name="nis"></td>
-                </tr>
-                <tr>
-                    <td width="25%">NAMA SISWA</td>
-                    <td width="25%"><input type="text" name="nama_siswa"></td>
-                </tr>
-                <tr>
-                    <td width="25%">JENIS KELAMIN</td>
+                    <td width="25%">GURU</td>
                     <td width="25%">
-                        <input type="radio" name="jk" value="L">Laki-Laki
-                        <input type="radio" name="jk" value="P">Perempuan
+                        <select name="guru_id">
+                            <option selected disabled>PILIH GURU</option>
+                            @foreach ($guru as $g)
+                                <option value="{{ $g->id }}">{{ $g->nama_guru }}</option>
+                            @endforeach
+                        </select>
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">ALAMAT</td>
-                    <td width="25%"><textarea name="alamat" cols="30" rows="5"></textarea></td>
+                    <td width="25%">MATA PELAJARAN</td>
+                    <td width="25%">
+                        <select name="mapel_id">
+                            <option selected disabled>PILIH MAPEL</option>
+                            @foreach ($mapel as $m)
+                                <option value="{{ $m->id }}">{{ $m->nama_mapel }}</option>
+                            @endforeach
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td width="25%">KELAS</td>
-                    <td>
+                    <td width="25%">
                         <select name="kelas_id">
                             <option selected disabled>PILIH KELAS</option>
                             @foreach ($kelas as $k)
@@ -34,10 +37,6 @@
                             @endforeach
                         </select>
                     </td>
-                </tr>
-                <tr>
-                    <td width="25%">PASSWORD</td>
-                    <td width="25%"><input type="password" name="password"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
